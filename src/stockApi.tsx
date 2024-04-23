@@ -1,9 +1,3 @@
-// src/api/stockApi.tsx
-
-import React from 'react';
-
-const API_KEY = 'RIBXT3XYLI69PC0Q';
-
 export interface StockData {
   symbol: string;
   open: number;
@@ -15,10 +9,14 @@ export interface StockData {
 
 export const fetchStockData = async (symbol?: string): Promise<StockData[]> => {
   try {
-    const url = symbol ? `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${API_KEY}` : `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&apikey=${API_KEY}`;
+    const apiKey = process.env.REACT_APP_API_KEY;
+    if (!apiKey) {
+      throw new Error('API key not found');
+    }
+
+    const url = symbol ? `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${apiKey}` : `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&apikey=${apiKey}`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log('Fetched data:', data); 
     const stockData: StockData[] = [];
 
     for (const key in data['Time Series (Daily)']) {
