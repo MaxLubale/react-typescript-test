@@ -1,6 +1,6 @@
 
 // to be put in .env file during production
-const API_KEY = 'RIBXT3XYLI69PC0Q';     
+const API_KEY = 'RIBXT3XYLI69PC0Q ';     
 
 export interface StockData {
   symbol: string;
