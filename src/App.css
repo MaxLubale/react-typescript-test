@@ -1,4 +1,81 @@
+/* Body */
 body {
-  
-  background-image: linear-gradient(to bottom right, #2e2c2c, #171616); 
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* White text */
+  margin: 0;
+  padding: 0;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Input */
+.input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  background-color: #1f1f1f; /* Dark input background */
+  color: #ffffff; /* White text */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #007bff; /* Blue border on focus */
+}
+
+/* Button */
+.button {
+  background-color: #007bff; /* Blue button */
+  color: #ffffff; /* White text */
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ffffff; /* White border */
+  padding: 12px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #007bff; /* Blue header */
+  color: #ffffff; /* White text */
+  font-weight: bold;
+}
+
+/* Spinner */
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+.spinner .spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-color: #007bff; /* Blue spinner */
 }
